@@ -11,15 +11,51 @@ const app = new App({
   socketMode: true
 });
 
+
+
 app.command("/kibb-help", async ({ ack, respond }) => {
   await ack();
   await respond({
     text:
-`Haii!!!! I'm Kibb, here is the cool stuf i can do!!!:
-/kibb-meow - Mreowwww :3
-/kibb-foxpic - generate UNLIMITED fox pics !!!`
+`*Haii!!!! I'm Kibb, here is the cool stuf i can do!!!:*
+/kibb-aboutme - hear me yap about myself
+/kibb-meow - mreowwww :3 (I'm bilingual)
+/kibb-foxpic - generate UNLIMITED fox pics !!!
+/kibb-musicrec - learn about my music taste :D
+/kibb-aboutcreator - learn about the person who made bot :O`
   });
 });
+
+
+
+app.command("/kibb-aboutme", async ({ ack, respond }) => {
+  await ack();
+  await respond({
+    text:
+` Hewwo!! I'm a fox named Kibb :3
+I love music, stars, weather, and doodling!! :D
+I don't like loud noises, school, and loneliness :(
+I have a buncha cool frens like Crescent and Starfruit!!
+I speak cat and fox :P`
+  });
+});
+
+
+
+app.command("/kibb-aboutcreator", async ({ ack, respond }) => {
+  await ack();
+  await respond({
+    text:
+` Hai! I'm Eoin Toal, and Kibb is my fursona.
+I love music, coding, art, and weather.
+You can find my music here: https://www.youtube.com/@13UNIT
+You can find my coding here: https://github.com/kibbthefox
+Have a great day :3
+This bot was made for Stardance.`
+  });
+});
+
+
 
 app.command("/kibb-foxpic", async ({ ack, respond }) => {
   await ack();
@@ -38,10 +74,26 @@ app.command("/kibb-foxpic", async ({ ack, respond }) => {
   }
 });
 
+
+
 app.command("/kibb-meow", async ({ command, ack, respond }) => {
   await ack();
   await respond({ text: `mrrreeoooow :3` });
 });
+
+
+
+app.command("/kibb-musicrec", async ({ command, ack, respond }) => {
+  await ack();
+  await respond({ text: `*Here are my music recommendations!*
+    - The artist 'WillyRodriguezWastTaken'
+    - The album 'Twin Fantasy'
+    - The album 'Dark Side of the Moon'
+    - The album 'Flower Boy'
+    - The album 'MIDI Bunny EP'` });
+});
+
+
 
 (async () => {
   await app.start();
